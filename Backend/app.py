@@ -1,8 +1,8 @@
 import uvicorn
 from fastapi import FastAPI
-from routes.registro import app_registro
-from routes.login import app_login
-from routes.administrador import app_admin
+from routes.register import app_register
+from routes.search import app_search
+from routes.update import app_update
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Mi aplicacion", version="1.0")
@@ -13,9 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(app_registro, prefix="/registro")
-app.include_router(app_login, prefix="/login")
-app.include_router(app_admin, prefix="/admin")
+app.include_router(app_register, prefix="/register")
+app.include_router(app_search, prefix="/search")
+app.include_router(app_update, prefix="/update")
 
 @app.get("/")
 def initial_app():

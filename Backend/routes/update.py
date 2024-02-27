@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from models.registro import User
 from db import ConexionDB
-app_search = APIRouter()
+app_update = APIRouter()
 
-@app_search.post("/")
+@app_update.post("/")
 def search(info:User):
     datos = info.dict()
 

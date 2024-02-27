@@ -3,8 +3,8 @@ import pymysql
 
 datos = {
         "host": "localhost",
-        "user": "ayax",
-        "passwd": "Password$321",
+        "user": "root",
+        "passwd": "mysql2022",
         "port": 3306,
         "db": "ecobottles"
     }
