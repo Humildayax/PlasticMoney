@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empresa de Telecomunicaciones</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0c23cbf6ea.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./logged.html">Empresa de Telecomunicaciones</a>
+          <img src="../../img/logo.png" alt="" width="auto" height="24" class="d-inline-block align-text-top">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Equipos de Mantenimiento
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="./rEquipos.html">Ver Equipos</a></li>
+                    <li><a class="dropdown-item" id="crearEquipo" href="./cEquipos.html">Crear Equipo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mantenimiento
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="./rMant.html">Ver Mantenimientos</a></li>
+                    <li><a class="dropdown-item" id="crearMant" href="./cMant.html">Crear Mantenimiento</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Usuarios
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="./rUsers.html">Ver Usuarios</a></li>
+                    <li><a class="dropdown-item" id="crearUser" href="./cUsers.html">Crear Usuario</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Cerrar Sesion</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <h1 class="text-center pt-3">Registro Mantenimiento</h1>
+          <div class="login-wrap mt-3">
+            <form class="bg-light px-5 py-3">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">fecha de Ejecucion</label>
+                <input type="date" class="form-control" id="ejecMant" aria-describedby="idHelp" required>
+                <div id="idHelp" class="form-text">Ingrese la fecha de ejecucion del mantenimiento</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Hora de Inicio</label>
+                <input type="number" class="form-control" id="horaInicioMant" placeholder="Ej: 5" required>
+                <div id="nombreHelp" class="form-text">Ingrese la hora de inicio en formato de 24 horas</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Hora de Finalizacion</label>
+                <input type="number" class="form-control" id="horaFinalMant" placeholder="Ej: 6" required>
+                <div id="apellidoHelp" class="form-text">Ingrese la hora de finalizacion en formato de 24 horas</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Numero de Identificacion</label>
+                <input type="text" class="form-control" id="idMant" placeholder="Ej: 1234" required>
+                <div id="cargoHelp" class="form-text">Ingrese el numero de identificacion del empleado</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Tipo de Mantenimiento</label>
+                <input type="text" class="form-control" id="tipoMant" placeholder="Ej: Limpieza" required>
+                <div id="direccionHelp" class="form-text">Ingrese el tipo de mantenimiento realizado</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Ubicacion</label>
+                <input type="text" class="form-control" id="ubicacionMant" placeholder="Pais/Ciudad/Departamento/Direccion" required>
+                <div id="telHelp" class="form-text">Ingrese la ubicacion donde se realizo el mantenimiento</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="descripcionMant" placeholder="Ej: Uso de la herramienta para..." required>
+                <div id="celHelp" class="form-text">Ingrese la descripcion de el mantenimiento realizado</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Identificacion del Equipo</label>
+                <input type="email" class="form-control" id="idEquipoMant" placeholder="Ej: AAA" required>
+                <div id="correoHelp" class="form-text">Ingrese la Identificacion del equipo que fue requerido en el mantenimiento</div>
+              </div>
+              <div class="form-group last">
+                  <button type="button" class="btn btn-primary" onclick="add_mant()">Registrar</button>
+                  <button type="reset" class="btn btn-secondary">Limpiar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../../js/peticiones.js"></script>
+    <script type="text/javascript" src="../../js/logged/cMant.js"></script>
+  </body>
+</html>
