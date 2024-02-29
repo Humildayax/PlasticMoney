@@ -7,7 +7,7 @@ app_register = APIRouter()
 def search(info:User):
     datos = info.dict()
 
-    query = """insert into users (cedula, celular, dinero) 
+    query = """insert into users (cedula, celular, dinero)
     values (%(cedula)s, %(celular)s, %(dinero)s)"""
     ConexionDB.make_query(query, datos)
     return {"datos":datos}
