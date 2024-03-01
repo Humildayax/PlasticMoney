@@ -1,14 +1,14 @@
-DROP DATABASE IF EXISTS 'ecobottles';
-CREATE DATABASE 'ecobottles';
- 
-USE 'ecobottles';
+DROP DATABASE IF EXISTS `ecobottles`;
+CREATE DATABASE `ecobottles`;
 
-CREATE TABLE 'users'(
-  id int DEFAULT NULL,
-  cedula varchar(255)DEFAULT NULL,
-  celular varchar(255)DEFAULT NULL,
-  dinero decimalDEFAULT NULL,
-  PRIMARY key ('id')
+USE `ecobottles`;
+
+CREATE TABLE `users`(
+  id int NOT NULL AUTO_INCREMENT,
+  cedula varchar(255) DEFAULT NULL,
+  celular varchar(255) DEFAULT NULL,
+  dinero decimal DEFAULT NULL,
+  PRIMARY key (`id`)
 );
 
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
