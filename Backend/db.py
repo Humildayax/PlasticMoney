@@ -6,7 +6,7 @@ datos = {
         "user": "guest",
         "passwd": "Password$321",
         "port": 3306,
-        "db": "ecobottles"
+        "db": "plasticmoney"
     }
 
 

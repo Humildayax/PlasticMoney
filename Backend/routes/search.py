@@ -1,13 +1,14 @@
 from fastapi import APIRouter
-from models.registro import Search
+from models.registro import Login
 from db import ConexionDB
 app_search = APIRouter()
 
 @app_search.post("")
-def search(info:Search):
+def search(info:Login):
     datos = info.model_dump()
-    query = """Select celular, dinero from users where cedula = %(cedula)s"""
+    query = """Select celular, dinero from users where cedula = %(cedula)s and activa = 1"""
     result = ConexionDB.make_query(query, datos)
     if result:
-        return {"mensaje": "Numero de Cedula Encontrado"}
-    return {"mensaje": "Numero de Cedula no Encontrado"}
+        celular, dinero = result[0]
+        return {"Datos": f"Celular: {celular}, Dinero {dinero}"}
+    return {"mensaje": "Numero de Cedula Encontrado"}
