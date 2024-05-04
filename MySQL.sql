@@ -1,12 +1,13 @@
-DROP DATABASE IF EXISTS `ecobottles`;
-CREATE DATABASE `ecobottles`;
+DROP DATABASE IF EXISTS plasticmoney;
+CREATE DATABASE plasticmoney;
 
-USE `ecobottles`;
+USE plasticmoney;
 
-CREATE TABLE `users`(
-  id int NOT NULL AUTO_INCREMENT,
-  cedula varchar(255) DEFAULT NULL,
-  celular varchar(255) DEFAULT NULL,
-  dinero decimal DEFAULT NULL,
-  PRIMARY key (`id`)
+CREATE TABLE users(
+	id int auto_increment,
+	cedula varchar(255),
+	celular varchar(255),
+	dinero decimal default 0,
+    activa bool default 0,
+    PRIMARY KEY (id)
 );
