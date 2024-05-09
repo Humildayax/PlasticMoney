@@ -6,7 +6,7 @@
 // Replace with your network credentials
 const char* ssid     = "Wifi_Name";
 const char* password = "Wifi_Passwd";
-int dinero = 0;
+int botella = 0;
 // REPLACE with your Domain name and URL path or IP address with path
 const char* serverName = "URL/IP";
 
@@ -24,21 +24,22 @@ void setup() {
 }
 
 void loop() {
-  dinero = 0;
-  // Lectura Datosde Arduino
+  int botella = 0;
+  String dinero = "";
+  // Lectura Datos de Arduino
   if(Serial.available() != 0){
-      dinero = Serial.read();
-      if(dinero == 5){
-        dinero = 500;
+      botella = Serial.read();
+      if(botella == 1){
+        dinero = "500";
         Serial.println(dinero);
-      }else if(dinero == 1){
-        dinero = 1000;
+      }else if(botella == 2){
+        dinero = "1000";
         Serial.println(dinero);
       }
   }
 
   //Check WiFi connection status
-  if(WiFi.status()== WL_CONNECTED && dinero =! 0){
+  if (WiFi.status() == WL_CONNECTED && (dinero == "500" || dinero == "1000")){
 
     std::unique_ptr<BearSSL::WiFiClientSecure>client(new BearSSL::WiFiClientSecure);
 
@@ -52,7 +53,7 @@ void loop() {
     http.begin(*client, serverName);
     http.addHeader("Content-type", "application/json");
     // Send HTTP GET request
-    int httpResponseCode = http.POST("{\"dinero\":" + dinero +"}");
+    int httpResponseCode = http.POST("\"dinero\":\""+dinero+"\"");
         
     if (httpResponseCode>0) {
       Serial.print("HTTP Response code: ");
@@ -63,7 +64,7 @@ void loop() {
       Serial.println(httpResponseCode);
     }
     // Free resources
-    https.end();
+    http.end();
   }
   else {
     Serial.println("WiFi Disconnected");
