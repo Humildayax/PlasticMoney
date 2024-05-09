@@ -1,11 +1,13 @@
 # PlasticMoney
 
+### Universidad Central
+
 Proyecto Pratica 3
 
-Universidad Central
-
-Integrantes
+**Integrantes**
 
 Juan Diego Espinosa
+
 Juliana Gonzalez Segura
+
 Jorge Enrique Zubieta
