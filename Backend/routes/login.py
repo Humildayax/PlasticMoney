@@ -7,5 +7,5 @@ app_login = APIRouter()
 def search(info:Login):
     datos = info.model_dump()
     query = """update users set activa = 1 where cedula = %(cedula)s"""
-    ConexionDB.make_query(query, datos)
+    result = ConexionDB.make_query(query, datos)
     return {"Mensaje": f"Bienvenido, {datos['cedula']}"}

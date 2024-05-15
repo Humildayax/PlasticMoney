@@ -10,5 +10,5 @@ def search(info:Login):
     result = ConexionDB.make_query(query, datos)
     if result:
         celular, dinero = result[0]
-        return {"Datos": f"Celular: {celular}, Dinero {dinero}"}
+        return {"celular": f"{celular}", "dinero": f"{dinero}"}
     return {"mensaje": "Numero de Cedula Encontrado"}
