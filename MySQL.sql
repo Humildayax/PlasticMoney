@@ -11,3 +11,7 @@ CREATE TABLE users(
     activa bool default 0,
     PRIMARY KEY (id)
 );
+
+-- DROP USER IF EXISTS  'guest'@'localhost';
+-- CREATE USER 'guest'@'localhost' IDENTIFIED BY 'Password$321';
+-- GRANT SELECT, INSERT, UPDATE, DELETE ON plasticmoney.users TO 'guest'@'localhost';
