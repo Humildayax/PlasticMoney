@@ -4,11 +4,11 @@
 #include <Wire.h>
 
 // Replace with your network credentials
-const char* ssid     = "ARRIS_9AA2_plus";
-const char* password = "Oresca2425";
+const char* ssid     = "Wifi_Name";
+const char* password = "Wifi_Passwd";
 int botella = 0;
 // REPLACE with your Domain name and URL path or IP address with path
-const char* serverName = "192.168.1.5:4443";
+const char* serverName = "URL:IP";
 
 void setup() {
   Serial.begin(115200);
