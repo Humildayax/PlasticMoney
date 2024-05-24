@@ -4,11 +4,11 @@
 #include <Wire.h>
 
 // Replace with your network credentials
-const char* ssid     = "Wifi_Name";
-const char* password = "Wifi_Passwd";
+const char* ssid     = "Xiaomi12";
+const char* password = "testing321";
 int botella = 0;
 // REPLACE with your Domain name and URL path or IP address with path
-const char* serverName = "URL:IP";
+const char* serverName = "http://192.168.1.11:4443/update";
 
 void setup() {
   Serial.begin(115200);
@@ -41,19 +41,16 @@ void loop() {
   //Check WiFi connection status
   if (WiFi.status() == WL_CONNECTED && (dinero == "500" || dinero == "1000")){
 
-    std::unique_ptr<BearSSL::WiFiClientSecure>client(new BearSSL::WiFiClientSecure);
-
-    // Ignore SSL certificate validation
-    client->setInsecure();
+    WiFiClient client;
     
     //create an HTTPClient instance
     HTTPClient http;
     
     // Your Domain name with URL path or IP address with path
-    http.begin(*client, serverName);
+    http.begin(client, serverName);
     http.addHeader("Content-Type", "application/json");
     // Send HTTP GET request
-    int httpResponseCode = http.POST("\"dinero\":\""+dinero+"\"");
+    int httpResponseCode = http.POST("{\"dinero\":\""+dinero+"\"}");
         
     if (httpResponseCode>0) {
       Serial.print("HTTP Response code: ");
@@ -61,7 +58,7 @@ void loop() {
     }
     else {
       Serial.print("Error code: ");
-      Serial.println(httpResponseCode);
+      Serial.println(http.errorToString(httpResponseCode).c_str());
     }
     // Free resources
     http.end();
